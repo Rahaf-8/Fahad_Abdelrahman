@@ -1,172 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ar">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fahad Abdelrahman</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
+  <title>خلفية متدرجة</title>
   <style>
     :root{
-      --lav-1: #f1f2f8;
-      --lav-2: #e7e9f3;
-      --lav-3: #dddfe9;
-
-      --pill-top: rgba(255,255,255,.78);
-      --pill-bot: rgba(235,238,250,.65);
-      --pill-border: rgba(0,0,0,.22);
-
-      --ink: #1f2648;
+      --top:#f2f2f2;     
+      --s1:#e9ebee;
+      --s2:#d2d7df;
+      --s3:#b4bcc9;
+      --s4:#95a3b4;
+      --s5:#768aa0;
+      --s6:#596f89;
+      --s7:#3a5472;
+      --s8:#203a5c;
+      --s9:#0f2a4f;      
+      --bottom:#072446;  
     }
 
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:#cfcfcf; /* خلفية رمادي للـ desktop */
-      display:flex;
-      justify-content:center;
-      align-items:flex-start;
-      padding:28px 0;
-      -webkit-font-smoothing: antialiased; 
-      -moz-osx-font-smoothing: grayscale;
-      /* background-image: url(./Images/5893422938546357812.jpg); */
+    html, body {
+      height: 100%;
+      margin: 0;
     }
 
-    .card{
-      width:min(640px, 92vw);
-      border-radius: 28px;
-      border: 1px solid rgba(0,0,0,.12);
-      box-shadow: 0 22px 44px rgba(0,0,0,.20);
-      padding:56px 28px 70px;
-      /* background: radial-gradient(120% 65% at 50% 8%, var(--lav-1) 0%, var(--lav-2) 48%, var(--lav-3) 100%); */
-      min-height:88vh;
-      position:relative;
+    body {
+      min-height: 100dvh;  
+      overflow-x: hidden;
+
+      background: linear-gradient(
+        to bottom,
+        var(--top) 0%,
+        var(--s1) 12%,
+        var(--s2) 24%,
+        var(--s3) 36%,
+        var(--s4) 48%,
+        var(--s5) 60%,
+        var(--s6) 72%,
+        var(--s7) 82%,
+        var(--s8) 90%,
+        var(--s9) 96%,
+        var(--bottom) 100%
+      );
+
+      
+      background-attachment: scroll;
+
+      font-family: system-ui, Arial, sans-serif;
+      color: #fff;
+      display: grid;
+      place-items: center;
     }
 
-    /* زر المشاركة */
-    .top-icons{ 
-      position:absolute; 
-      top:16px; 
-      right:18px; }
-    .round{
-      width:38px; height:38px; border-radius:999px; display:grid; place-items:center;
-      background:#ffffffcc; border:1px solid rgba(0,0,0,.12); box-shadow:0 8px 18px rgba(0,0,0,.12);
-      cursor:pointer;
-    }
+    
 
-    .header{ 
-      display:flex; 
-      flex-direction:column; 
-      align-items:center; 
-      gap:16px; }
-    .avatar-ring{
-      width:92px;height:92px;border-radius:50%;
-      display:grid;place-items:center;
-      background: linear-gradient(180deg,#f5f6fb,#e8eaf3);
-    }
-    .avatar{
-      width:84px;height:84px;border-radius:50%;
-      background:url(./Images/5893422938546357812.jpg) center/112% no-repeat;
-    }
-
-    h1{
-      margin:0; 
-      font:700 24px/1.2 Georgia, "Times New Roman", Times, serif; 
-      text-align:center; color:#1a1e24;
-    }
-    .mail-icon a{ color:#111; font-size:18px; text-decoration:none; }
-
-    .section-title{
-      margin-top:6px;
-      font:700 16.5px/1.2 Georgia, "Times New Roman", Times, serif;
-      text-align:center; color:#1a1e24;
-    }
-
-    .links{ 
-      margin-top:22px; 
-      display:flex; 
-      flex-direction:column; 
-      gap:16px; 
-    }
-    .link{
-      position:relative;
-      display:flex; align-items:center; 
-      justify-content:space-between;
-      text-decoration:none;
-      padding:16px 22px; 
-      border-radius:28px;
-      border:1px solid var(--pill-border);
-      color:var(--ink);
-      /* transition: 0.2s; */
-    }
-    .link:hover{ 
-      /* transform:translateY(-2px); */
-      background-color: rgba(207, 205, 205, 0.644);
-    }
-
-    .left{ width:24px; display:flex; justify-content:flex-start; }
-    .right{ width:16px; display:flex; justify-content:flex-end; color:#6a7080; }
-    .label{
-      position:absolute; left:50%; transform:translateX(-50%);
-      font:700 16px/1.2 Georgia, "Times New Roman", Times, serif;
-      color:var(--ink);
-    }
-    .brand{ width:22px; height:22px; }
-
-    .footer{ margin-top:40px; text-align:center; font-size:12px; color:#3e4652; }
-    .footer a{ color:#3e4652; text-decoration:none; }
-    .dot{ margin:0 8px; }
-
-    /* على الموبايل: الكارد تبقى الشاشة كلها */
-    @media (max-width:520px){
-      body{ 
-        background:none; 
-        padding:0; }
-      .card{
-        width:100vw; min-height:100vh;
-        border-radius:0; border:none; box-shadow:none;
-        padding:40px 18px 52px;
+    @media (max-width: 768px) {
+      body {
+        background-attachment: scroll; 
       }
     }
   </style>
 </head>
 <body>
-  <main class="card">
-    <div class="top-icons">
-      <button class="round" id="shareBtn"><i class="fa-solid fa-share-nodes"></i></button>
-    </div>
-
-    <header class="header">
-      <div class="avatar-ring"><div class="avatar"></div></div>
-      <h1>Fahad Abdelrahman</h1>
-      <div class="section-title">Contact Us | تواصل معنا</div>
-      <div class="mail-icon"><a href="mailto:fhadayde@gmail.com"><i class="fa-regular fa-envelope"></i></a></div>
-      <div class="mail-icon"><a href="mailto:fhadayde@gmail.com"><i class="fa-regular fa-envelope"></i></a></div>
-      <div class="mail-icon"><a href="mailto:fhadayde@gmail.com"><i class="fa-regular fa-envelope"></i></a></div>
-    </header>
-
-    <section class="links">
-      <a class="link" href="https://wa.me/966558649533"><div class="left"><img class="brand" src="https://cdn.simpleicons.org/whatsapp/1f2648"></div><span class="label">WhatsApp</span><div class="right"><i class="fa-solid fa-ellipsis-vertical"></i></div></a>
-      <a class="link" href="https://goo.gl/maps/"><div class="left"><i class="fa-solid fa-map-pin" style="color:#1f2648"></i></div><span class="label">Location</span><div class="right"><i class="fa-solid fa-ellipsis-vertical"></i></div></a>
-      <a class="link" href="https://www.tiktok.com/@bin_ayde"><div class="left"><img class="brand" src="https://cdn.simpleicons.org/tiktok/1f2648"></div><span class="label">TikTok</span><div class="right"><i class="fa-solid fa-ellipsis-vertical"></i></div></a>
-      <a class="link" href="https://facebook.com/profile.php?id=61577798674014"><div class="left"><img class="brand" src="https://cdn.simpleicons.org/facebook/1f2648"></div><span class="label">Facebook</span><div class="right"><i class="fa-solid fa-ellipsis-vertical"></i></div></a>
-      <a class="link" href="https://x.com/binayed00"><div class="left"><img class="brand" src="https://cdn.simpleicons.org/x/1f2648"></div><span class="label">X</span><div class="right"><i class="fa-solid fa-ellipsis-vertical"></i></div></a>
-      <a class="link" href="https://linkedin.com/in/fahad-abdulrahman-050a93368/"><div class="left"><i class="fab fa-linkedin-in" style="font-size:20px;color:#1f2648;"></i></div><span class="label">LinkedIn</span><div class="right"><i class="fa-solid fa-ellipsis-vertical"></i></div></a>
-    </section>
-
-    <footer class="footer">
-      <a href="#">Cookie Preferences</a><span class="dot">•</span><a href="#">Report</a><span class="dot">•</span><a href="#">Privacy</a>
-    </footer>
-  </main>
-
-  <script>
-    const shareBtn=document.getElementById('shareBtn');
-    const shareUrl='https://fahad-abdelrahman.netlify.app/';
-    shareBtn.addEventListener('click', async()=>{
-      if(navigator.share){
-        try{await navigator.share({title:'Fahad Abdelrahman',url:shareUrl});}catch{}
-      }else{window.open(shareUrl,'_blank');}
-    });
-  </script>
+  <div class="card">
+    <h1></h1>
+    <p></p>
+  </div>
 </body>
 </html>
