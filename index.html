@@ -23,10 +23,13 @@
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background:#cfcfcf; /* خلفية رمادي للـ desktop */
-      display:flex;justify-content:center;align-items:flex-start;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
       padding:28px 0;
       -webkit-font-smoothing: antialiased; 
       -moz-osx-font-smoothing: grayscale;
+      /* background-image: url(./Images/5893422938546357812.jpg); */
     }
 
     .card{
@@ -35,20 +38,27 @@
       border: 1px solid rgba(0,0,0,.12);
       box-shadow: 0 22px 44px rgba(0,0,0,.20);
       padding:56px 28px 70px;
-      background: radial-gradient(120% 65% at 50% 8%, var(--lav-1) 0%, var(--lav-2) 48%, var(--lav-3) 100%);
+      /* background: radial-gradient(120% 65% at 50% 8%, var(--lav-1) 0%, var(--lav-2) 48%, var(--lav-3) 100%); */
       min-height:88vh;
       position:relative;
     }
 
     /* زر المشاركة */
-    .top-icons{ position:absolute; top:16px; right:18px; }
+    .top-icons{ 
+      position:absolute; 
+      top:16px; 
+      right:18px; }
     .round{
       width:38px; height:38px; border-radius:999px; display:grid; place-items:center;
       background:#ffffffcc; border:1px solid rgba(0,0,0,.12); box-shadow:0 8px 18px rgba(0,0,0,.12);
       cursor:pointer;
     }
 
-    .header{ display:flex; flex-direction:column; align-items:center; gap:16px; }
+    .header{ 
+      display:flex; 
+      flex-direction:column; 
+      align-items:center; 
+      gap:16px; }
     .avatar-ring{
       width:92px;height:92px;border-radius:50%;
       display:grid;place-items:center;
@@ -72,17 +82,27 @@
       text-align:center; color:#1a1e24;
     }
 
-    .links{ margin-top:22px; display:flex; flex-direction:column; gap:16px; }
+    .links{ 
+      margin-top:22px; 
+      display:flex; 
+      flex-direction:column; 
+      gap:16px; 
+    }
     .link{
       position:relative;
-      display:flex; align-items:center; justify-content:space-between;
+      display:flex; align-items:center; 
+      justify-content:space-between;
       text-decoration:none;
-      padding:16px 22px; border-radius:28px;
-      background: linear-gradient(180deg, var(--pill-top), var(--pill-bot));
+      padding:16px 22px; 
+      border-radius:28px;
       border:1px solid var(--pill-border);
       color:var(--ink);
+      /* transition: 0.2s; */
     }
-    .link:hover{ transform:translateY(-2px); }
+    .link:hover{ 
+      /* transform:translateY(-2px); */
+      background-color: rgba(207, 205, 205, 0.644);
+    }
 
     .left{ width:24px; display:flex; justify-content:flex-start; }
     .right{ width:16px; display:flex; justify-content:flex-end; color:#6a7080; }
@@ -99,7 +119,9 @@
 
     /* على الموبايل: الكارد تبقى الشاشة كلها */
     @media (max-width:520px){
-      body{ background:none; padding:0; }
+      body{ 
+        background:none; 
+        padding:0; }
       .card{
         width:100vw; min-height:100vh;
         border-radius:0; border:none; box-shadow:none;
@@ -117,8 +139,10 @@
     <header class="header">
       <div class="avatar-ring"><div class="avatar"></div></div>
       <h1>Fahad Abdelrahman</h1>
-      <div class="mail-icon"><a href="mailto:fhadayde@gmail.com"><i class="fa-regular fa-envelope"></i></a></div>
       <div class="section-title">Contact Us | تواصل معنا</div>
+      <div class="mail-icon"><a href="mailto:fhadayde@gmail.com"><i class="fa-regular fa-envelope"></i></a></div>
+      <div class="mail-icon"><a href="mailto:fhadayde@gmail.com"><i class="fa-regular fa-envelope"></i></a></div>
+      <div class="mail-icon"><a href="mailto:fhadayde@gmail.com"><i class="fa-regular fa-envelope"></i></a></div>
     </header>
 
     <section class="links">
