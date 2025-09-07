@@ -1,62 +1,196 @@
-<!doctype html>
-<html lang="ar">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <title></title>
-  <style>
-    html, body { 
-      height:100%; 
-      margin:0; 
-    }
-    body{
-      min-height:100dvh;
-      overflow-x:hidden;
-      background: linear-gradient(
-        to bottom,
-        #f3f4f4 0%,
-        #f0f1f3 5%,
-        #e9eaec 10%,
-        #e0e4e6 15%,
-        #d3d6dc 20%,
-        #c1c8d0 25%,
-        #adb6c2 30%,
-        #96a2b2 35%,
-        #7e8da0 40%,
-        #68788f 45%,
-        #4f647f 50%,
-        #3b536f 55%,
-        #2c4564 60%,
-        #203a5d 65%,
-        #183255 70%,
-        #122e53 75%,
-        #112d52 80%,
-        #132f54 85%,
-        #173456 90%,
-        #213b5c 95%,
-        #2c4564 100%
-      );
-      background-attachment: scroll; 
-    }
-    i{
-      font-size: 100px;
-    }
-  </style>
-</head>
-<body>
-    <!-- 
-    <i class="fa-brands fa-whatsapp"></i>
-    <i class="fa-brands fa-facebook-f"></i>
-    <i class="fa-brands fa-instagram"></i>
-    <i class="fa-regular fa-location-dot"></i>
-    <i class="fa-brands fa-linkedin-in"></i>
-    <i class="fa-brands fa-tiktok"></i>
-    <i class="fa-thin fa-envelope"></i>
-    <i class="fa-brands fa-x-twitter"></i> 
-    -->
-    
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap" rel="stylesheet">
+    <title>Fahad Abdelrahman</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+      body {
+        font-family: "Changa", sans-serif;
+        background: linear-gradient(1deg, #122e53, #c7c6c6);
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(236, 228, 228, 0.856);
+      }
+      .container .upper a{
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        font-size: 24px;
+        word-spacing: 20px;
+      }
+
+      .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+      }
+
+      .logo p {
+        display: inline;
+        font-size: 20px;
+        font-weight: bold;
+        color: #02242e;
+        line-height: 3px;
+      }
+      .logo .c-l {
+        font-size: 14px;
+        font-weight: bold;
+        color: #02242e;
+      }
+      .logo .grad-bg-logo {
+        width: 7.5rem;
+        height: 7.5rem;
+        border-radius: 50%;
+        background: var(--gradient);
+      }
+
+      .logo .image-logo {
+        width: 7rem;
+        height: 7rem;
+        background-image: url(./Images/MainImage.png);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .link {
+        position: relative;              
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        background: #9c9c9c7c;
+        color: white;
+        text-decoration: none;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 12px;
+        transition: background 0.3s;
+        font-size: 18px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .link i {
+        position: absolute;  
+        left: 15px; 
+        font-size: 20px;
+      }
+
+
+      .link:hover {
+        background: #122e53;
+      }
+
+      .phone {
+        margin-top: 15px;
+        font-size: 20px;
+        color: #333;
+      }
+
+      /* Responsive */
+      @media (max-width: 500px) {
+        .container {
+          padding: 20px;
+          max-width: 90%;
+        }
+        .logo p {
+          font-size: 22px;
+        }
+        .link {
+          font-size: 16px;
+          padding: 12px;
+        }
+        .phone {
+          font-size: 18px;
+        }
+        .container .upper{
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+      <div class="logo">
+          <div>
+            <div class="image-logo"></div>
+          </div>
+          <p>ين عياض</p>
+          <p>للتسويق والاستثمار العام </p>
+          <p style="color: aliceblue;" class="c-l">Contact us | تواصل معنا</p>
+      </div>
+    <div class="container">
+      <div class="upper">
+
+        <a  href="https://wa.me/966558649533" target="_blank">
+          <i class="fab fa-whatsapp"></i> 
+        </a>
+        <a
+        href="https://www.linkedin.com/in/fahad-abdulrahman-050a93368/"
+        target="_blank">
+        <i class="fab fa-linkedin"></i> 
+      </a>
+      <a  href="mailto:info@company.com">
+        <i class="fas fa-envelope"></i> 
+      </a>
+      </div>
+      <a
+        class="link"
+        href="https://www.tiktok.com/@bin_ayde?_t=zs-8zqgxotsx0c&_r=1"
+        target="_blank">
+        <i class="fab fa-tiktok"></i> TikTok
+      </a>
+      <a
+        class="link"
+        href="https://www.instagram.com/username"
+        target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a
+        class="link"
+        href="https://twitter.com/username"
+        target="_blank">
+        <i class="fa-brands fa-x-twitter"></i> X
+      </a>
+
+      <a
+        class="link"
+        href="https://www.facebook.com/profile.php?id=61577798674014"
+        target="_blank">
+        <i class="fab fa-facebook"></i> Facebook
+      </a>
+      <a
+        class="link"
+        href="https://www.google.com/maps/place/%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B1+%D8%A7%D9%84%D8%B1%D8%A7%D8%A6%D8%AF%D8%A9+%D9%84%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA+%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9+%D9%88%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D9%8A%D8%A9%E2%80%AD/@21.6256581,39.2080363,17z/data=!3m1!4b1!4m6!3m5!1s0x15c3d75c5da1adb5:0x96cdf200d697ec7c!8m2!3d21.6256581!4d39.2080363!16s%2Fg%2F11yhdkgt15?entry=ttu&g_ep=EgoyMDI1MDgzMC4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank">
+        <i class="fas fa-map-marker-alt"></i> Location
+      </a>
+      
+    </div>
+  </body>
 </html>
