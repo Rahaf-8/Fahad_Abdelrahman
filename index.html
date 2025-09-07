@@ -8,48 +8,40 @@
 
   <style>
     :root{
-      --card-w: 640px;
-      --card-radius: 28px;
-
       --lav-1: #f1f2f8;
       --lav-2: #e7e9f3;
       --lav-3: #dddfe9;
 
-      --text: #1a1e24;
       --pill-top: rgba(255,255,255,.78);
       --pill-bot: rgba(235,238,250,.65);
       --pill-border: rgba(0,0,0,.22);
 
       --ink: #1f2648;
-      --outer-gray: #cfcfcf;
     }
 
-    html,body{height:100%}
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: var(--outer-gray);
+      background:#cfcfcf; /* خلفية رمادي للـ desktop */
       display:flex;justify-content:center;align-items:flex-start;
       padding:28px 0;
-      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
-      -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased; 
+      -moz-osx-font-smoothing: grayscale;
     }
 
     .card{
-      width:min(var(--card-w), 92vw);
-      position:relative;
-      border-radius: var(--card-radius);
-      overflow: hidden;
+      width:min(640px, 92vw);
+      border-radius: 28px;
       border: 1px solid rgba(0,0,0,.12);
       box-shadow: 0 22px 44px rgba(0,0,0,.20);
-      padding: 56px 28px 70px;
-      background:
-        radial-gradient(120% 65% at 50% 8%, var(--lav-1) 0%, var(--lav-2) 48%, var(--lav-3) 100%);
-      min-height: 88vh;
-      transform: translateY(-6px);
+      padding:56px 28px 70px;
+      background: radial-gradient(120% 65% at 50% 8%, var(--lav-1) 0%, var(--lav-2) 48%, var(--lav-3) 100%);
+      min-height:88vh;
+      position:relative;
     }
 
-    .top-icons{ position:absolute; top:16px; right:18px; display:flex; gap:10px; }
+    /* زر المشاركة */
+    .top-icons{ position:absolute; top:16px; right:18px; }
     .round{
       width:38px; height:38px; border-radius:999px; display:grid; place-items:center;
       background:#ffffffcc; border:1px solid rgba(0,0,0,.12); box-shadow:0 8px 18px rgba(0,0,0,.12);
@@ -61,154 +53,96 @@
       width:92px;height:92px;border-radius:50%;
       display:grid;place-items:center;
       background: linear-gradient(180deg,#f5f6fb,#e8eaf3);
-      border:1px solid rgba(0,0,0,.08);
-      box-shadow: inset 0 8px 18px rgba(0,0,0,.08), 0 6px 16px rgba(0,0,0,.08);
     }
     .avatar{
       width:84px;height:84px;border-radius:50%;
-      background-image:url(./Images/5893422938546357812.jpg);
-      background-size:112%; background-position:center;
-      box-shadow:0 0 0 3px rgba(255,255,255,.96) inset, 0 6px 12px rgba(0,0,0,.16);
-      filter: saturate(1.18) contrast(1.08) brightness(1.03);
+      background:url(./Images/5893422938546357812.jpg) center/112% no-repeat;
     }
 
     h1{
-      margin:0; font: 700 24px/1.2 Georgia, "Times New Roman", Times, serif; color:#1a1e24;
-      text-align:center;
+      margin:0; 
+      font:700 24px/1.2 Georgia, "Times New Roman", Times, serif; 
+      text-align:center; color:#1a1e24;
     }
     .mail-icon a{ color:#111; font-size:18px; text-decoration:none; }
 
-    /* العنوان الفرعي Serif زي العنوان */
     .section-title{
       margin-top:6px;
-      font: 700 16.5px/1.2 Georgia, "Times New Roman", Times, serif;
-      color:#1a1e24;
-      text-align:center;
-      letter-spacing:.2px;
+      font:700 16.5px/1.2 Georgia, "Times New Roman", Times, serif;
+      text-align:center; color:#1a1e24;
     }
 
     .links{ margin-top:22px; display:flex; flex-direction:column; gap:16px; }
-
     .link{
       position:relative;
       display:flex; align-items:center; justify-content:space-between;
       text-decoration:none;
-      padding:16px 22px; border-radius: 28px;
+      padding:16px 22px; border-radius:28px;
       background: linear-gradient(180deg, var(--pill-top), var(--pill-bot));
-      border: 1px solid var(--pill-border);
-      box-shadow: 0 6px 16px rgba(0,0,0,.10);
-      backdrop-filter: blur(6px) saturate(140%);
-      -webkit-backdrop-filter: blur(6px) saturate(140%);
-      transition: transform .12s ease, box-shadow .2s ease, background .2s ease;
-      color: var(--ink);
+      border:1px solid var(--pill-border);
+      color:var(--ink);
     }
-    .link:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(0,0,0,.14);
-      background: linear-gradient(180deg, rgba(255,255,255,.82), rgba(235,238,250,.70));
-    }
+    .link:hover{ transform:translateY(-2px); }
 
-    .left{ width:24px; display:flex; justify-content:flex-start; align-items:center; }
+    .left{ width:24px; display:flex; justify-content:flex-start; }
     .right{ width:16px; display:flex; justify-content:flex-end; color:#6a7080; }
     .label{
       position:absolute; left:50%; transform:translateX(-50%);
-      font: 700 16px/1.2 Georgia, "Times New Roman", Times, serif;
-      color: var(--ink);
-      white-space:nowrap; pointer-events:none;
+      font:700 16px/1.2 Georgia, "Times New Roman", Times, serif;
+      color:var(--ink);
     }
+    .brand{ width:22px; height:22px; }
 
-    .brand{ width:22px; height:22px; display:block; }
-
-    .footer{ margin-top:40px; text-align:center; color:#3e4652; font-size:12px; }
+    .footer{ margin-top:40px; text-align:center; font-size:12px; color:#3e4652; }
     .footer a{ color:#3e4652; text-decoration:none; }
-    .dot{ margin: 0 8px; }
+    .dot{ margin:0 8px; }
 
+    /* على الموبايل: الكارد تبقى الشاشة كلها */
     @media (max-width:520px){
-      .card{ width:94vw; padding: 40px 18px 52px; border-radius:26px; min-height:92vh; }
-      .link{ padding:18px 22px; }
-      .label{ font-size:15.5px; }
-      .section-title{ font-size:16px; }
+      body{ background:none; padding:0; }
+      .card{
+        width:100vw; min-height:100vh;
+        border-radius:0; border:none; box-shadow:none;
+        padding:40px 18px 52px;
+      }
     }
   </style>
 </head>
 <body>
-
   <main class="card">
-    <!-- زر المشاركة -->
     <div class="top-icons">
-      <button class="round" id="shareBtn" title="Share">
-        <i class="fa-solid fa-share-nodes"></i>
-      </button>
+      <button class="round" id="shareBtn"><i class="fa-solid fa-share-nodes"></i></button>
     </div>
 
     <header class="header">
       <div class="avatar-ring"><div class="avatar"></div></div>
       <h1>Fahad Abdelrahman</h1>
-      <div class="mail-icon">
-        <a href="mailto:fhadayde@gmail.com"><i class="fa-regular fa-envelope"></i></a>
-      </div>
+      <div class="mail-icon"><a href="mailto:fhadayde@gmail.com"><i class="fa-regular fa-envelope"></i></a></div>
       <div class="section-title">Contact Us | تواصل معنا</div>
     </header>
 
     <section class="links">
-      <a class="link" href="https://wa.me/966558649533" target="_blank">
-        <div class="left"><img class="brand" src="https://cdn.simpleicons.org/whatsapp/1f2648" alt=""></div>
-        <span class="label">WhatsApp</span>
-        <div class="right"><i class="fa-solid fa-ellipsis-vertical"></i></div>
-      </a>
-
-      <a class="link" href="https://goo.gl/maps/" target="_blank">
-        <div class="left"><i class="fa-solid fa-map-pin" style="color:#1f2648"></i></div>
-        <span class="label">Location</span>
-        <div class="right"><i class="fa-solid fa-ellipsis-vertical"></i></div>
-      </a>
-
-      <a class="link" href="https://www.tiktok.com/@bin_ayde" target="_blank">
-        <div class="left"><img class="brand" src="https://cdn.simpleicons.org/tiktok/1f2648" alt=""></div>
-        <span class="label">TikTok</span>
-        <div class="right"><i class="fa-solid fa-ellipsis-vertical"></i></div>
-      </a>
-
-      <a class="link" href="https://www.facebook.com/profile.php?id=61577798674014" target="_blank">
-        <div class="left"><img class="brand" src="https://cdn.simpleicons.org/facebook/1f2648" alt=""></div>
-        <span class="label">Facebook</span>
-        <div class="right"><i class="fa-solid fa-ellipsis-vertical"></i></div>
-      </a>
-
-      <a class="link" href="https://x.com/binayed00" target="_blank">
-        <div class="left"><img class="brand" src="https://cdn.simpleicons.org/x/1f2648" alt=""></div>
-        <span class="label">X</span>
-        <div class="right"><i class="fa-solid fa-ellipsis-vertical"></i></div>
-      </a>
-
-      <a class="link" href="https://www.linkedin.com/in/fahad-abdulrahman-050a93368/" target="_blank">
-        <div class="left"><i class="fab fa-linkedin-in" style="font-size:20px;color:#1f2648;"></i></div>
-        <span class="label">LinkedIn</span>
-        <div class="right"><i class="fa-solid fa-ellipsis-vertical"></i></div>
-      </a>
+      <a class="link" href="https://wa.me/966558649533"><div class="left"><img class="brand" src="https://cdn.simpleicons.org/whatsapp/1f2648"></div><span class="label">WhatsApp</span><div class="right"><i class="fa-solid fa-ellipsis-vertical"></i></div></a>
+      <a class="link" href="https://goo.gl/maps/"><div class="left"><i class="fa-solid fa-map-pin" style="color:#1f2648"></i></div><span class="label">Location</span><div class="right"><i class="fa-solid fa-ellipsis-vertical"></i></div></a>
+      <a class="link" href="https://www.tiktok.com/@bin_ayde"><div class="left"><img class="brand" src="https://cdn.simpleicons.org/tiktok/1f2648"></div><span class="label">TikTok</span><div class="right"><i class="fa-solid fa-ellipsis-vertical"></i></div></a>
+      <a class="link" href="https://facebook.com/profile.php?id=61577798674014"><div class="left"><img class="brand" src="https://cdn.simpleicons.org/facebook/1f2648"></div><span class="label">Facebook</span><div class="right"><i class="fa-solid fa-ellipsis-vertical"></i></div></a>
+      <a class="link" href="https://x.com/binayed00"><div class="left"><img class="brand" src="https://cdn.simpleicons.org/x/1f2648"></div><span class="label">X</span><div class="right"><i class="fa-solid fa-ellipsis-vertical"></i></div></a>
+      <a class="link" href="https://linkedin.com/in/fahad-abdulrahman-050a93368/"><div class="left"><i class="fab fa-linkedin-in" style="font-size:20px;color:#1f2648;"></i></div><span class="label">LinkedIn</span><div class="right"><i class="fa-solid fa-ellipsis-vertical"></i></div></a>
     </section>
 
     <footer class="footer">
-      <a href="#!">Cookie Preferences</a>
-      <span class="dot">•</span>
-      <a href="#!">Report</a>
-      <span class="dot">•</span>
-      <a href="#!">Privacy</a>
+      <a href="#">Cookie Preferences</a><span class="dot">•</span><a href="#">Report</a><span class="dot">•</span><a href="#">Privacy</a>
     </footer>
   </main>
 
   <script>
-    const shareBtn = document.getElementById('shareBtn');
-    const shareUrl = 'https://fahad-abdelrahman.netlify.app/';
-    shareBtn.addEventListener('click', async () => {
-      const data = { title:'Fahad Abdelrahman', url: shareUrl };
-      if (navigator.share) {
-        try { await navigator.share(data); } catch {}
-      } else {
-        window.open(shareUrl, '_blank');
-      }
+    const shareBtn=document.getElementById('shareBtn');
+    const shareUrl='https://fahad-abdelrahman.netlify.app/';
+    shareBtn.addEventListener('click', async()=>{
+      if(navigator.share){
+        try{await navigator.share({title:'Fahad Abdelrahman',url:shareUrl});}catch{}
+      }else{window.open(shareUrl,'_blank');}
     });
   </script>
-
 </body>
 </html>
