@@ -28,30 +28,27 @@
     html{ font-family:'Cormorant Garamond', serif; height:100%; }
     :lang(ar){ font-family:'Adir', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; direction:rtl; font-weight:400; }
 
-    body{
-      height:100%; margin:0;
-      padding: clamp(10px,2.2svh,14px);
-      overflow:hidden;
-      display:grid; place-items:start center;
-      min-height:100svh;
+   
+body{
+  
+background: #0b173b; /* fallback (deep navy) */
+background: linear-gradient(
+  to bottom left,
+  #f5f6f7 0%,
+  #eef0f3 8%,
+  #dee1e9 16%,
+  #cdd1dd 24%,
+  #b4b9cc 32%,
+  #9aa2ba 40%,
+  #7d86a7 50%,
+  #656e97 60%,
+  #485485 70%,
+  #2b396f 85%,
+  #0b173b 100%
+);
 
-      background: linear-gradient(
-        to bottom,
-        #ffffff 0%,
-        #eef1f5 8%,
-        #d6dee9 18%,
-        #b6c4d6 28%,
-        #8ba1bd 38%,
-        #5f7ca1 50%,
-        #355b83 62%,
-        #20466f 72%,
-        #123a61 82%,
-        #0b3157 90%,
-        #082a49 96%,
-        #041f3a 100%
-      );
-      background-attachment: fixed;
-    }
+}
+
 
     .logo, .container{ width:100%; max-width:min(var(--page-width), 90vw); margin-inline:auto; }
 
@@ -73,21 +70,24 @@
       font-weight: 300;
       line-height: 1.2;
       transform: translateY(-2px);
+        color: #182e4c;
     }
     .logo p[lang="ar"]:nth-of-type(2){
       margin: 2px 0 0 0;
       font-size: clamp(17px, 2.6svh, 19px);
       font-weight: 700;
       line-height: 1.22;
+      color: 0c2d59;
     }
     .logo .c-l{
-      margin-top: clamp(1px, 1svh, 2px);
-      margin-bottom: 0;
-      font-size: clamp(12px, 1.9svh, 13.5px);
+  margin-top: 0;         
+  display: inline-block;  
+  transform: translateY(10px);
+   font-size: clamp(12px, 1.9svh, 13.5px);
       font-weight: 300;
       color: rgba(255,255,255,0.95);
-    }
 
+    }
     .container{
       margin-top: 0;
       margin-bottom: clamp(10px, 2.4svh, 14px);
@@ -133,7 +133,7 @@
     <div><div class="image-logo"></div></div>
     <p lang="ar">بن عايض</p>
     <p lang="ar">للتسويق والاستثمار العقاري</p>
-    <p class="c-l">Contact us</p>
+    <p class="c-l">Contact Us..</p>
   </div>
 
   <div class="container">
