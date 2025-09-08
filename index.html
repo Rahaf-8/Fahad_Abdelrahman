@@ -1,182 +1,247 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <title>Fahad Abdelrahman</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <title>Fahad Abdelrahman</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <style>
-    @font-face {
-      font-family: 'Adir';
-      src: url('./webfonts/Adir.otf') format('opentype'),
-           url('./webfonts/AdirFont.ttf') format('truetype');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
+    <style>
+        @font-face {
+            font-family: 'Adir';
+            src: url('./webfonts/Adir.otf') format('opentype'),
+                url('./webfonts/AdirFont.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
 
-    :root{
-      --radius: 16px;
-      --gap: 12px;
-      --btn-h: 46px;
-      --page-width: 360px; /* عرض الكارد كما بالصورة */
-    }
+        :root {
+            --radius: 16px;
+            --gap: 12px;
+            --btn-h: 46px;
+            --page-width: 360px;
+            /* عرض الكارد كما بالصورة */
+        }
 
-    html { font-family: 'Cormorant Garamond', serif; }
+        html {
+            font-family: 'Cormorant Garamond', serif;
+        }
 
-    :lang(ar){
-      font-family: 'Adir', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
-      direction: rtl;
-      font-weight: 400;
-    }
+        :lang(ar) {
+            font-family: 'Adir', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+            direction: rtl;
+            font-weight: 400;
+        }
 
-    /* الخلفية بنفس الإحساس: فاتح أعلى يمين → كحلي أسفل يسار */
-    body{
-      font-family: "Cormorant Garamond", 29LT Adirondack, serif;
-      background: linear-gradient(135deg, #f4f6f7 0%, #cfd7e2 28%, #5a6f8f 58%, #0f2a55 100%);
-      margin: 0;
-      min-height: 100vh;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+        /* الخلفية بنفس الإحساس: فاتح أعلى يمين → كحلي أسفل يسار */
+        body {
+            font-family: "Cormorant Garamond", 29LT Adirondack, serif;
+            background:
+                linear-gradient(to bottom,
+                 #ffffff 0%,
+      #f7f7f7 6%,
+      #eceff3 14%,
+      #dbe1e9 22%,
+      #c8d0dc 30%,
+      #b2bdcd 38%,
+      #9aa8bc 46%,
+      #7f92a9 54%,
+      #647b95 62%,
+      #4b6482 70%,
+      #2a466b 78%,   
+      #163a5f 86%,
+      #0c3154 94%,
+      #082a49 100%   );
+            background-color: #0e2f53;
+            /* fallback */
+            background-attachment: fixed;
+            margin: 0;
+            min-height: 100vh;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    /* عرض موحّد ومحتوى بالكامل داخل الصفحة */
-    .logo, .container{
-      width: 100%;
-      max-width: var(--page-width);
-      margin-left: auto;
-      margin-right: auto;
-    }
+        /* عرض موحّد ومحتوى بالكامل داخل الصفحة */
+        .logo,
+        .container {
+            width: 100%;
+            max-width: var(--page-width);
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-    /* موضع اللوجو والنص */
-    .logo{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 68px;   /* مطابق تقريبا للصورة */
-      margin-bottom: 14px;
-      text-align: center;
-    }
-    .logo .image-logo{
-      width: 112px; height: 112px;
-      background-image: url(./Images/bin\ ayed\ logo\ ابيض.png);
-      background-size: cover; background-position: center;
-      margin-bottom: 10px;
-    }
-    .logo p{
-      margin: 4px 0;             /* عشان الكلام يبقى تحت اللوجو مباشرة */
-      font-size: 20px;
-      color: #02242e;
-      line-height: 1.25;
-    }
-    .logo .c-l{
-      margin-top: 12px;           /* مسافة صغيرة قبل Contact us */
-      font-size: 14px;
-      color: #e6ecf5;
-    }
+        /* موضع اللوجو والنص */
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 68px;
+            /* مطابق تقريبا للصورة */
+            margin-bottom: 14px;
+            text-align: center;
+        }
 
-    /* الكارد زجاجي شفاف وحواف دائرية وبُعد عن الحواف */
-    .container{
-      margin-top: 18px;
-      margin-bottom: 36px;
-      padding: 20px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.55);
-      background: rgba(255,255,255,0.06);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.14);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      text-align: center;
-    }
+        .logo .image-logo {
+            width: 112px;
+            height: 112px;
+            background-image: url(./Images/bin\ ayed\ logo\ ابيض.png);
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 10px;
+        }
 
-    /* شريط الأيقونات أعلى الكارد */
-    .container .upper{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 8px;
-    }
-    .container .upper a{
-      color: #e9eef5;
-      font-size: 18px;
-      text-decoration: none;
-    }
+        .logo p {
+            margin: 4px 0;
+            /* عشان الكلام يبقى تحت اللوجو مباشرة */
+            font-size: 20px;
+            color: #02242e;
+            line-height: 1.25;
+        }
 
-    /* الأزرار: نفس الارتفاع/الحواف والمسافات */
-    .link{
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: var(--btn-h);
-      margin: 8px 0;
-      border-radius: 14px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08));
-      border: 1px solid rgba(255,255,255,0.32);
-      color: #e8edf6;
-      font-size: 16px;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: inset 0 8px 18px rgba(0,0,0,0.10),
-                  0 6px 14px rgba(0,0,0,0.06);
-      transition: background .2s ease, color .2s ease, transform .15s ease;
-    }
-    .link i{ position: absolute; left: 15px; font-size: 18px; }
-    .link:hover{ background: #122e53; color: #fff; }
+        .logo .c-l {
+            margin-top: 12px;
+            /* مسافة صغيرة قبل Contact us */
+            font-size: 14px;
+            color: #e6ecf5;
+        }
 
-    .phone{ margin-top: 15px; font-size: 20px; color: #333; }
+        /* الكارد زجاجي شفاف وحواف دائرية وبُعد عن الحواف */
+        .container {
+            margin-top: 18px;
+            margin-bottom: 36px;
+            padding: 20px;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: center;
+        }
 
-    /* Responsive */
-    @media (max-width: 500px){
-      .container{ padding: 20px; max-width: calc(100% - 32px); }
-      .logo p{ font-size: 22px; }
-      .link{ font-size: 16px; }
-      .container .upper{ gap: 18px; margin-bottom: 2px; }
-    }
-  </style>
+        /* شريط الأيقونات أعلى الكارد */
+        .container .upper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 8px;
+        }
+
+        .container .upper a {
+            color: #e9eef5;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        /* الأزرار: نفس الارتفاع/الحواف والمسافات */
+        .link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: var(--btn-h);
+            margin: 8px 0;
+            border-radius: 14px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08));
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            color: #e8edf6;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: inset 0 8px 18px rgba(0, 0, 0, 0.10),
+                0 6px 14px rgba(0, 0, 0, 0.06);
+            transition: background .2s ease, color .2s ease, transform .15s ease;
+        }
+
+        .link i {
+            position: absolute;
+            left: 15px;
+            font-size: 18px;
+        }
+
+        .link:hover {
+            background: #122e53;
+            color: #fff;
+        }
+
+        .phone {
+            margin-top: 15px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        /* Responsive */
+        @media (max-width: 500px) {
+            .container {
+                padding: 20px;
+                max-width: calc(100% - 32px);
+            }
+
+            .logo p {
+                font-size: 22px;
+            }
+
+            .link {
+                font-size: 16px;
+            }
+
+            .container .upper {
+                gap: 18px;
+                margin-bottom: 2px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <div class="logo">
-    <div><div class="image-logo"></div></div>
-    <p lang="ar">بن عايض</p>
-    <p lang="ar">للتسويق والاستثمار العام </p>
-    <p class="c-l">Contact us</p>
-  </div>
-
-  <div class="container">
-    <div class="upper">
-      <a href="https://wa.me/966558649533" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.linkedin.com/in/fahad-abdulrahman-050a93368/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:info@company.com"><i class="fas fa-envelope"></i></a>
+    <div class="logo">
+        <div>
+            <div class="image-logo"></div>
+        </div>
+        <p lang="ar">بن عايض</p>
+        <p lang="ar">للتسويق والاستثمار العام </p>
+        <p class="c-l">Contact us</p>
     </div>
 
-    <a class="link" href="https://www.tiktok.com/@bin_ayde?_t=zs-8zqgxotsx0c&_r=1" target="_blank">
-      <i class="fab fa-tiktok"></i> TikTok
-    </a>
-    <a class="link" href="https://www.instagram.com/username" target="_blank">
-      <i class="fab fa-instagram"></i> Instagram
-    </a>
-    <a class="link" href="https://twitter.com/username" target="_blank">
-      <i class="fa-brands fa-x-twitter"></i> X
-    </a>
-    <a class="link" href="https://www.facebook.com/profile.php?id=61577798674014" target="_blank">
-      <i class="fab fa-facebook"></i> Facebook
-    </a>
-    <a class="link" href="https://www.google.com/maps/place/%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B1+%D8%A7%D9%84%D8%B1%D8%A7%D8%A6%D8%AF%D8%A9+%D9%84%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA+%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9+%D9%88%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D9%8A%D8%A9%E2%80%AD/@21.6256581,39.2080363,17z/data=!3m1!4b1!4m6!3m5!1s0x15c3d75c5da1adb5:0x96cdf200d697ec7c!8m2!3d21.6256581!4d39.2080363!16s%2Fg%2F11yhdkgt15?entry=ttu&g_ep=EgoyMDI1MDgzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-      <i class="fas fa-map-marker-alt"></i> Location
-    </a>
-  </div>
+    <div class="container">
+        <div class="upper">
+            <a href="https://wa.me/966558649533" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/in/fahad-abdulrahman-050a93368/" target="_blank"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="mailto:info@company.com"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <a class="link" href="https://www.tiktok.com/@bin_ayde?_t=zs-8zqgxotsx0c&_r=1" target="_blank">
+            <i class="fab fa-tiktok"></i> TikTok
+        </a>
+        <a class="link" href="https://www.instagram.com/username" target="_blank">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a class="link" href="https://twitter.com/username" target="_blank">
+            <i class="fa-brands fa-x-twitter"></i> X
+        </a>
+        <a class="link" href="https://www.facebook.com/profile.php?id=61577798674014" target="_blank">
+            <i class="fab fa-facebook"></i> Facebook
+        </a>
+        <a class="link"
+            href="https://www.google.com/maps/place/%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B1+%D8%A7%D9%84%D8%B1%D8%A7%D8%A6%D8%AF%D8%A9+%D9%84%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA+%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9+%D9%88%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D9%8A%D8%A9%E2%80%AD/@21.6256581,39.2080363,17z/data=!3m1!4b1!4m6!3m5!1s0x15c3d75c5da1adb5:0x96cdf200d697ec7c!8m2!3d21.6256581!4d39.2080363!16s%2Fg%2F11yhdkgt15?entry=ttu&g_ep=EgoyMDI1MDgzMC4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank">
+            <i class="fas fa-map-marker-alt"></i> Location
+        </a>
+    </div>
 </body>
+
 </html>
